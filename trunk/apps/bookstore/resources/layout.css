@@ -1,0 +1,323 @@
+.image a:link {
+	color:#999;
+	}
+#content h1{
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+}
+th {
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: left;
+	padding-left: 5px;
+	padding-right: 5px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #000;
+	padding-bottom: 5px;
+	background-color: #FFF;
+	padding-top: 3px;
+}
+table {
+	margin-bottom: 20px;
+	padding-top: 5px;
+}
+td {
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-size: 12px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 5px;
+	padding-right: 5px;
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: #000;
+}
+#comments {
+	border-top-width: 5px;
+	border-top-style: solid;
+	border-top-color: #000;
+	border-right-color: #000;
+	border-bottom-color: #000;
+	border-left-color: #000;
+	background-color: #CCC;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	margin: 0 0 0 220px;
+}
+
+#comments .comment {
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-top-style: solid;
+	border-bottom-style: dotted;
+	border-top-color: #999;
+	border-bottom-color: #999;
+	margin-bottom: 20px;
+	background-color: #EEEEEE;
+	padding-left: 10px;
+	padding-right: 10px;
+	white-space: normal;
+	padding-bottom: 20px;
+	line-height: 18px;
+}
+
+#comments .comment p {
+	font-size:12px;
+	}
+
+#comments .comment h2 {
+	font-weight:bold;
+	font-size: 14px;
+	}
+
+.newcomment {
+	padding-left:10px;
+	background-color: #DDD;
+	padding-top: 10px;
+	border-top-width: 2px;
+	border-top-style: solid;
+	border-top-color: #000;
+	border-right-color: #000;
+	border-bottom-color: #000;
+	border-left-color: #000;
+	}
+.formdescription {
+	border:none;
+	color:#222;
+	display:block;
+	line-height:150%;
+	padding:0 0 1px;
+	font-size: 12px;
+}
+
+.newcomment p {
+	margin-right: 10px;
+	padding-left: 10px;
+	}
+
+.newcomment ul {
+	padding: 5px;
+	margin-right: 10px;
+	list-style:none;
+	}
+	
+.newcomment li {
+	background-color:#CCC;
+	padding: 10px;
+	}
+
+.newcomment .textarea {
+	margin:0;
+	width:99%;
+	}
+
+.search {
+}
+
+.navigation {
+	float: right;
+}
+	
+.image a:visited {
+	color:#666;
+	}
+
+.image a:hover {
+	color:#000;
+	}
+
+.header {
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	background-color: #FFF;
+	height: 30px;
+	font-size: 14px;
+	padding-top: 10px;
+	padding-right: 10px;
+	padding-left: 10px;
+	border-top-width: 5px;
+	border-bottom-width: 1px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: #999;
+	border-bottom-color: #999;
+	border-right-style: solid;
+	border-left-style: solid;
+	border-right-color: #999;
+	border-left-color: #999;
+	border-right-width: 0px;
+	border-left-width: 0px;
+	margin-left: 20px;
+	margin-top: 10px;
+}
+
+.product {
+	border-top-width: 5px;
+	border-top-style: solid;
+	width: 180px;
+	float: left;
+	margin-right: 10px;
+	font-size: 11pt;
+	font-weight: bold;
+	margin-bottom: 25px;
+	background-color: #F2F2F2;
+	padding-top: 5px;
+	padding-right: 5px;
+	padding-left: 5px;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+.topseller {
+	background-color: #C00;
+	color: #FFF;
+	text-transform: uppercase;
+	font-size: 11px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+#content {
+	margin-left: 20px;
+}
+.author {
+	border-top-width: 1px;
+	border-top-style: solid;
+	font-size: 10px;
+	text-transform: uppercase;
+	padding-top: 3px;
+	background-color: #FFF;
+	text-align: left;
+	padding-left: 5px;
+	height: 15px;
+	color: #666;
+}
+#footer {
+	float: left;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: #999;
+	border-bottom-color: #999;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	text-transform: uppercase;
+	height: 16px;
+	padding-top: 3px;
+	color: #000;
+	text-decoration: none;
+}
+
+#footer a, a:link, a:visited {
+	text-decoration:none;
+	color:#000;
+	}
+	
+#footer a:hover {
+	text-decoration:none;
+	color:#999;
+	}
+	
+.image {
+	margin-top: 5px;
+	border-top-width: 1px;
+	border-top-style: dotted;
+	height: 140px;
+}
+.price {
+	padding-bottom: 5px;
+	background-image: url(_plain/english-Dateien/best_hinz_pas.gif);
+	background-repeat: no-repeat;
+	background-position: right 0px;
+}
+.price {
+    padding-bottom: 5px;
+}
+.amount {
+    float:left;
+}
+.addtocart {
+    float:right;
+}
+.addtocart img {
+    border: 0px; none;
+}
+.ranking {
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #D61710;
+	font-size: 12px;
+	padding-bottom: 2px;
+	padding-top: 2px;
+}
+#topseller {
+	float:left;
+}
+
+#topseller .product {
+	border-top-width: 5px;
+	border-top-style: solid;
+	width: 180px;
+	float: left;
+	margin-right: 10px;
+	font-size: 11pt;
+	font-weight: bold;
+	margin-bottom: 25px;
+	background-color: #F2F2F2;
+	padding-top: 5px;
+	padding-right: 5px;
+	padding-left: 5px;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	border-top-color: #C00;
+	border-bottom-color: #C00;
+}
+.released {
+	font-size: 10px;
+	border-top-width: 1px;
+	border-top-style: dotted;
+	padding-top: 3px;
+}
+.language {
+	font-size: 10px;
+	border-top-width: 1px;
+	border-top-style: dotted;
+	padding-top: 3px;
+	margin-top: 2px;
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	padding-bottom: 3px;
+}
+	
+#content .product h1  {
+	color:#333;
+	text-decoration:underline;
+	font-size: 10pt;
+	font-weight: bold;
+	margin-bottom: 10px;
+	margin-top: 5px;
+	height: 50px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 5px;
+}
+
+#content .product h1 a:hover, a:visited {
+	color:#999;
+	}
+.basketnav {
+    padding-bottom: 5px;
+    padding-top: 10px;
+}
+.basketnav a img {
+    border: 0px; none
+}
+.home {
+	float: right;
+	border-right: 200px;
+	padding-right: 200px;
+}
