@@ -185,7 +185,9 @@ public class Order {
             final byte[] bytes = contents.getBytes("UTF-8");
             zos.write(bytes);
             zos.closeEntry();
+            pos++;
         }
         zos.finish();
+        zos.flush();
     }
 }
