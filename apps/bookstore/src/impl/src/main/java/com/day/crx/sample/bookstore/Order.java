@@ -163,6 +163,7 @@ public class Order {
                 positionNode.setProperty("productId", current.getProduct().getId());
                 positionNode.setProperty("amount", current.getAmount());
                 positionNode.setProperty("price", current.getProduct().getPrice().toString());
+                pos++;
             }
             session.save();
         } catch (RepositoryException re) {
