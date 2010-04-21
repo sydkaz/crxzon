@@ -45,7 +45,7 @@
   <%
   final Cart cart = Cart.fromRequest(slingRequest);
   if ( cart.isEmpty() ) {
-      %>Your cart is empty.<%  
+      %><h2>Your cart is empty.</h2><%  
   } else {
       %><form name="cart" class="newcomment">
       <table><tbody>

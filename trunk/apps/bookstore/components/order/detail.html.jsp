@@ -33,8 +33,9 @@
     final Order order = Order.create(resource);
 %>
   <h1>Order <%= order.getId() %></h1>
-  <p>Order Date: <%= Util.formatDate(order.getCreated()) %></p>
-  <p><a href="<%= Util.getLink(slingRequest, resource.getPath() + ".zip") %>">Download</a></p>
+  <div id="orderinfo">
+  <h2>Order Date: <%= Util.formatDate(order.getCreated()) %> | <a href="<%= Util.getLink(slingRequest, resource.getPath() + ".zip") %>">Digital Book Download</a></h2>
+  </div>
 <div class="order newcomment">
   <table><tbody>
     <tr><th>Position</th><th>Product</th><th>Price</th><th>Amount</th><th>Total</th></tr>
