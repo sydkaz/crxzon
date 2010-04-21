@@ -24,17 +24,18 @@
     com.day.crx.sample.bookstore.Order" %><%
 %><%@taglib prefix="sling" uri="http://sling.apache.org/taglibs/sling/1.0" %><%
 %><sling:defineObjects/><%
-	// we first have to check if the current user is the user for the order!
-	if ( !Util.isAllowedToAccessOrder(resource) ) {
-	    response.sendError(404);
-	    return;
-	}
+    // we first have to check if the current user is the user for the order!
+    if ( !Util.isAllowedToAccessOrder(resource) ) {
+        response.sendError(404);
+        return;
+    }
     // get the order
     final Order order = Order.create(resource);
-%><div class="order">
+%>
   <h1>Order <%= order.getId() %></h1>
   <p>Order Date: <%= Util.formatDate(order.getCreated()) %></p>
   <p><a href="<%= Util.getLink(slingRequest, resource.getPath() + ".zip") %>">Download</a></p>
+<div class="order newcomment">
   <table><tbody>
     <tr><th>Position</th><th>Product</th><th>Price</th><th>Amount</th><th>Total</th></tr>
     <%

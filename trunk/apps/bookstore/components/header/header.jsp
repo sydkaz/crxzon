@@ -22,7 +22,7 @@
 %><%@taglib prefix="sling" uri="http://sling.apache.org/taglibs/sling/1.0" %><%
 %><sling:defineObjects/><%
 %><div class="header">
-  <div><%
+  <div class="welcome"><%
     if ( Util.isAnonymous(request) ) {
 %>
 Welcome! <a href="<%= Util.getLink(slingRequest, "/products.html?sling:authRequestLogin=BASIC") %>">Login</a>
