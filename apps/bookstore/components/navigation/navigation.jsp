@@ -26,7 +26,7 @@
 </div>
 <div class="navigation">
 <div class="search">
-<form name="search" method="GET" action="<%= Util.getLink(slingRequest, "/apps/bookstore/resources/search.html") %>">
+<form class="search" name="search" method="GET" action="<%= Util.getLink(slingRequest, "/apps/bookstore/resources/search.html") %>">
 <input type="text" name="query"/><input type="submit" value="Search"/>
 </form>
 </div></div>
