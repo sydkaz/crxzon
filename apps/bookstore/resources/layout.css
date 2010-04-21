@@ -117,7 +117,6 @@ td {
 }
 
 .navigation {
-	float: right;
 }
 	
 .image a:visited {
@@ -150,6 +149,8 @@ td {
 	border-left-width: 0px;
 	margin-left: 20px;
 	margin-top: 10px;
+	text-align: right;
+	vertical-align: middle;
 }
 
 .product {
@@ -317,7 +318,6 @@ td {
     border: 0px; none
 }
 .home {
-	float: right;
-	border-right: 200px;
-	padding-right: 200px;
+	border-right: 20px;
+	padding-right: 20px;
 }

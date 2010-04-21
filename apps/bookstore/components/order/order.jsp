@@ -40,6 +40,8 @@
   </head>
   <body>
   <sling:include resource="<%= resource %>" resourceType="bookstore/components/header"/>
+  <div id="content">
   <sling:include resource="<%= resource %>" replaceSelectors="detail"/>
+  </div>
 </body>
 </html>
