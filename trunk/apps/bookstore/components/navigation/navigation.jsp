@@ -21,12 +21,12 @@
 %><%@taglib prefix="sling" uri="http://sling.apache.org/taglibs/sling/1.0" %><%
 %><sling:defineObjects/><%
 %>
+<div class="home">
+<a href="<%= Util.getLink(slingRequest,"/products.html") %>">Home</a>
+</div>
 <div class="navigation">
 <div class="search">
 <form name="search" method="GET" action="<%= Util.getLink(slingRequest, "/apps/bookstore/resources/search.html") %>">
 <input type="text" name="query"/><input type="submit" value="Search"/>
 </form>
 </div></div>
-<div class="home">
-<a href="<%= Util.getLink(slingRequest,"/products.html") %>">Home</a>
-</div>

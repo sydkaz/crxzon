@@ -21,7 +21,8 @@
                   com.day.crx.sample.bookstore.Util"%><%
 %><%@taglib prefix="sling" uri="http://sling.apache.org/taglibs/sling/1.0" %><%
 %><sling:defineObjects/><%
-%><div class="header"><%
+%><div class="header">
+  <div><%
     if ( Util.isAnonymous(request) ) {
 %>
 Welcome! <a href="<%= Util.getLink(slingRequest, "/products.html?sling:authRequestLogin=BASIC") %>">Login</a>
@@ -45,5 +46,6 @@ Welcome, <%= request.getRemoteUser() %>!
     if ( !Util.isAnonymous(request) ) { %>
 &nbsp;<a href="<%= Util.getLink(slingRequest, "/apps/bookstore/resources/account.html") %>">Account</a>
     <% } %>
+  </div>
   <sling:include resource="<%= resource %>" resourceType="bookstore/components/navigation"/>
 </div>
