@@ -53,7 +53,9 @@
   </head>
   <body>
   <sling:include resource="<%= resource %>" resourceType="bookstore/components/header"/>
+  <div id="content">
   <h1>Thank you for your order!</h1>
   <sling:include path="<%= order.getPath() %>" replaceSelectors="detail"/>
+  </div>
 </body>
 </html>
