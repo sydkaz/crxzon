@@ -1,6 +1,6 @@
 Export-Package: com.day.crx.sample.bookstore
 Private-Package: com.day.crx.sample.bookstore.impl,OSGI-INF
-Import-Package: com.day.crx.sample.bookstore,javax.jcr,javax.jcr.query,javax.servlet.http,org.apache.jackrabbit.api;version=2.0,org.apache.jackrabbit.api.security.principal;version=2.0,org.apache.jackrabbit.api.security.user;version=2.0,org.apache.sling.api;version=2.0,org.apache.sling.api.resource;version=2.0,org.apache.sling.commons.json;version=2.0.4.incubator,org.apache.sling.jcr.api;version=2.0,org.apache.sling.jcr.resource;version=2.0,org.osgi.service.component;version=1.0,org.osgi.service.event;version=1.1,org.slf4j;version=1.5
+Import-Package: com.day.crx.sample.bookstore,javax.jcr,javax.jcr.query,javax.servlet.http,org.apache.jackrabbit.api;version=2.0,org.apache.jackrabbit.api.security.principal;version=2.0,org.apache.jackrabbit.api.security.user;version=2.0,org.apache.sling.api;version=2.0,org.apache.sling.api.resource;version=2.0,org.apache.sling.commons.json;version=2.0.4,org.apache.sling.jcr.api;version=2.0,org.apache.sling.jcr.resource;version=2.0,org.osgi.service.component;version=1.0,org.osgi.service.event;version=1.1,org.slf4j;version=1.5
 Bundle-Name: CRX - Sample Bookstore Demo
 Bundle-Description: Contains the bookstore sample demo for CRX
 Bundle-SymbolicName: com.day.crx.sample.bookstore
