@@ -85,10 +85,10 @@ public class Order {
      * @return The order object.
      */
     public static Order create(final Resource resource) {
-        final Order order = new Order(ResourceUtil.getName(resource));
+        final Order order = new Order(resource.getName());
         order.created = ResourceUtil.getValueMap(resource).get("created", Date.class);
         order.total = new BigDecimal(ResourceUtil.getValueMap(resource).get("price", "0.0"));
-        final Iterator<Resource> i = ResourceUtil.listChildren(resource);
+        final Iterator<Resource> i = resource.listChildren();
         while ( i.hasNext() ) {
             final Resource itemResource = i.next();
             final ValueMap attributes = ResourceUtil.getValueMap(itemResource);
