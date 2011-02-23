@@ -17,6 +17,7 @@
 package com.day.crx.sample.bookstore.impl;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.BlockingQueue;
@@ -31,10 +32,11 @@ import javax.jcr.query.QueryManager;
 import javax.jcr.query.QueryResult;
 
 import org.apache.sling.api.SlingConstants;
+import org.apache.sling.api.resource.LoginException;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
+import org.apache.sling.api.resource.ResourceResolverFactory;
 import org.apache.sling.jcr.api.SlingRepository;
-import org.apache.sling.jcr.resource.JcrResourceResolverFactory;
 import org.osgi.service.component.ComponentContext;
 import org.osgi.service.event.Event;
 import org.osgi.service.event.EventHandler;
@@ -76,7 +78,7 @@ public class RankingServiceImpl
     private SlingRepository repository;
 
     /** @scr.reference */
-    private JcrResourceResolverFactory resourceResolverFactory;
+    private ResourceResolverFactory resourceResolverFactory;
 
     /** Cache for the highest ranking paths. */
     private volatile String[] highestRankingPaths;
@@ -124,7 +126,7 @@ public class RankingServiceImpl
                 try {
                     adminSession = this.repository.loginAdministrative(null);
 
-                    final ResourceResolver resolver = this.resourceResolverFactory.getResourceResolver(adminSession);
+                    final ResourceResolver resolver = this.resourceResolverFactory.getResourceResolver(Collections.singletonMap("user.jcr.session", (Object) adminSession));
 
                     // get order resource
                     final Resource orderResource = resolver.getResource(path);
@@ -133,6 +135,9 @@ public class RankingServiceImpl
 
                         this.update(order, adminSession);
                     }
+                } catch (LoginException le) {
+                    // TODO - we ignore this for now
+                    logger.error("Unable to login", le);
                 } catch (RepositoryException re) {
                     // TODO - we ignore this for now
                     logger.error("Unable to update ranking!", re);
@@ -237,15 +242,15 @@ public class RankingServiceImpl
     /** Return the lowest ranked product. */
     private Node getLowestRankingNode(Session session)
     throws RepositoryException {
-        final StringBuilder buffer = new StringBuilder("/jcr:root/products//*");
-        buffer.append("[@");
+        final StringBuilder buffer = new StringBuilder("SELECT * FROM [nt:base] AS s WHERE ISDESCENDANTNODE([/products]) AND ");
+        buffer.append("s.");
         buffer.append(Product.PROPERTY_PRICE);
-        buffer.append("] order by @");
+        buffer.append(" IS NOT NULL ORDER BY s.");
         buffer.append(Product.PROPERTY_RANKING);
-        buffer.append(" descending");
+        buffer.append(" DESC");
 
         final QueryManager manager = session.getWorkspace().getQueryManager();
-        final Query q = manager.createQuery(buffer.toString(), Query.XPATH);
+        final Query q = manager.createQuery(buffer.toString(), Query.JCR_SQL2);
         final QueryResult result = q.execute();
         final NodeIterator i = result.getNodes();
         return (i.hasNext() ? i.nextNode() : null);
@@ -256,19 +261,19 @@ public class RankingServiceImpl
      */
     private String[] getHighestRankedProductPaths(int amount) {
         final List<String> paths = new ArrayList<String>();
-        final StringBuilder buffer = new StringBuilder("/jcr:root/products//*");
-        buffer.append("[@");
+        final StringBuilder buffer = new StringBuilder("SELECT * FROM [nt:base] AS s WHERE ISDESCENDANTNODE([/products]) AND ");
+        buffer.append("s.");
         buffer.append(Product.PROPERTY_RANKING);
-        buffer.append("] order by @");
+        buffer.append(" IS NOT NULL ORDER BY s.");
         buffer.append(Product.PROPERTY_RANKING);
-        buffer.append(" ascending");
+        buffer.append(" ASC");
 
         // get an admin session
         Session session = null;
         try {
             session = this.repository.loginAdministrative(null);
             final QueryManager manager = session.getWorkspace().getQueryManager();
-            final Query q = manager.createQuery(buffer.toString(), Query.XPATH);
+            final Query q = manager.createQuery(buffer.toString(), Query.JCR_SQL2);
             final QueryResult result = q.execute();
             final NodeIterator i = result.getNodes();
             while ( i.hasNext() && paths.size() < amount ) {

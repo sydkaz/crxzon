@@ -44,7 +44,7 @@ public class Account {
         final String ordersPath = Util.getUserHome(session) + "/orders";
         final Resource homeResource = resolver.getResource(ordersPath);
         if ( homeResource != null ) {
-            final Iterator<Resource> i = ResourceUtil.listChildren(homeResource);
+            final Iterator<Resource> i = homeResource.listChildren();
             while ( i.hasNext() ) {
                 final Resource orderResource = i.next();
 
