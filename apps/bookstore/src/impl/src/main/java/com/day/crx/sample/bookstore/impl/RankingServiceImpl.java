@@ -48,16 +48,19 @@ import com.day.crx.sample.bookstore.Order;
 import com.day.crx.sample.bookstore.Product;
 import com.day.crx.sample.bookstore.RankingService;
 
+import org.apache.felix.scr.annotations.Component;
+import org.apache.felix.scr.annotations.Service;
+import org.apache.felix.scr.annotations.Property;
+
+
 /**
  * Default implementation of the ranking service.
  * The ranking is updated through observation (based on OSGi events).
  * The service can be used by clients to get the highest ranked products.
- *
- * @scr.component immediate=true metatype=false
- * @scr.service interface="RankingService"
- * @scr.service interface="EventHandler"
- * @scr.property nameRef="org.osgi.service.event.EventConstants.EVENT_TOPIC" valueRef="SlingConstants.TOPIC_RESOURCE_ADDED"
  */
+@Component(immediate = true)
+@Service(value = {RankingService.class, EventHandler.class})
+@Property(name = org.osgi.service.event.EventConstants.EVENT_TOPIC, value = SlingConstants.TOPIC_RESOURCE_ADDED)
 public class RankingServiceImpl
     implements RankingService, EventHandler, Runnable {
 
